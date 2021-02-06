@@ -1,13 +1,15 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: "@muukii/chglog-action"
+description: "Generates a changelog between refs"
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  left-ref: # id of input
+    description: "base ref"
     required: true
-    default: '1000'
+  right-ref:
+    description: "head ref"
+    required: true
 outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  text: # output will be available to future steps
+    description: "The text generated"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
